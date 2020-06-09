@@ -1,16 +1,19 @@
 /* 
 --------- container(부모) --------
-display: flex;
+- display: flex;
 
-justify-content: 	flex-start | flex-end | center | space-between | space-evenly | space-around
-align-items: 			stretch | flex-start | flex-end | center
-align-content: 		flex-start | flex-end | center | space-between | space-evenly | space-around
-flex-wrap: 				nowrap | wrap
+- justify-content: 	flex-start | flex-end | center | space-between | space-evenly | space-around
+- align-items: 			stretch | flex-start | flex-end | center
+- align-content: 		flex-start | flex-end | center | space-between | space-evenly | space-around
+- flex-wrap: 				nowrap | wrap
+- flex-direction: 	row | row-reverse | column | column-reverse
 
 ---------- items(자식) ----------
-flex-grow: 			0, 1~9999
-flex-shrink: 		0, 1~9999
-flex-basis: 		100px | 20% | 3rem
+- flex-grow: 			0, 1~9999
+- flex-shrink: 		0, 1~9999
+- flex-basis: 		100px | 20% | 3rem
+- order: 					1, 2, 3
+- align-self:			auto | flex-start | flex-end | center | baseline | stretch
 */
 
 
@@ -45,16 +48,33 @@ html, body {height: 5000px;}
 }
 
 
-.box-wrap {margin-top: 100px; border: 5px solid green; height: 600px;
+.box-wrap {margin-top: 100px; border: 5px solid green;
 	display: flex;
 	justify-content: flex-start;
-	align-items: center;
-	align-content: space-evenly;
-	flex-wrap: wrap;
+	align-items: flex-start;
+	/* flex-wrap: wrap; */
 }
 .box-wrap .box {border: 5px solid orangered;
-	flex-basis: 20%;
+	/* 
+	flex-basis: 200px;
+	flex-grow: 0;
+	flex-shrink: 1;
+	*/
+	order: 2;
+	flex: 200px 0 0;
+	height: 180px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+.box-wrap .box.box3 {order: 1}
+
+.item-wrap {margin-top: 100px;}
+.item-wrap > .item {display: flex; flex-wrap: wrap;}
+.item-wrap > .item > div {flex: 50% 0 0;}
+.item-wrap > .item > div.item-cont {display: flex; align-items: center; justify-content: center; background-color: #f8f8f8;}
+
+@media screen and (max-width: 767px) {
+	.item-wrap > .item > div {flex: 100% 0 0;}
+	.item-wrap > .item > div.item-cont {order: 2; padding: 2rem;}
 }
