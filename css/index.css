@@ -2,7 +2,6 @@
 .wrap {width: 100%; height: 100%;}
 
 .home-wrap {display: flex; flex-direction: column;}
-.home-wrap > div {border: 1px solid red;}
 
 .home-wrap .title-wrap {flex: 35% 1 0; display: flex; align-items: center; letter-spacing: -3px; padding-top: 80px;}
 .home-wrap .title-wrap .bar {border: 2px solid yellowgreen; width: 50%;}
@@ -12,14 +11,18 @@
 .home-wrap .city-wrap {flex: 15% 0 0; display: flex; justify-content: center; align-items: center;}
 .home-wrap .city-wrap #city {width: 60%; padding: 0.75rem; font-size: 1.5rem; border: 1px solid #becc91;}
 
-.daily-wrap {flex: 15% 0 0; display: flex; align-items: center; justify-content: center;}
+.daily-wrap {flex: 15% 0 0; display: flex; align-items: center; justify-content: center; border-top: 1px solid #becc91; border-bottom: 1px solid #becc91;}
 .daily-wrap > .icon {margin-right: 20px;}
 .daily-wrap > .info > .city-name {font-size: 2rem;}
 .daily-wrap > .info > .descs {display: flex; align-items: center;}
 .daily-wrap .temp {font-size: 1.5rem;}
 .daily-wrap .desc {font-size: 1.25rem; margin-left: 1rem;}
 
-.world-wrap {flex: 35% 0 0;}
+.world-wrap {flex: 35% 0 0; display: flex; justify-content: space-evenly; padding: 30px 16px; font-size: 1rem;}
+.world-wrap > .city {flex: 30% 0 0; background-color: rgba(11, 32, 14, 0.8); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 8px;}
+.world-wrap .title {font-size: 1.5em;}
+.world-wrap .temp {font-size: 1.25em;}
+.world-wrap .desc {font-size: 1.125em;}
 
 
 .info-wrap {visibility: hidden;}
