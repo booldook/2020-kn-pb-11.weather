@@ -1,4 +1,22 @@
+/* 
+--------- container(부모) --------
+display: flex;
+
+justify-content: 	flex-start | flex-end | center | space-between | space-evenly | space-around
+align-items: 			stretch | flex-start | flex-end | center
+align-content: 		flex-start | flex-end | center | space-between | space-evenly | space-around
+flex-wrap: 				nowrap | wrap
+
+---------- items(자식) ----------
+flex-grow: 			0, 1~9999
+flex-shrink: 		0, 1~9999
+flex-basis: 		100px | 20% | 3rem
+*/
+
+
+html, body {height: 5000px;}
 .wrapper {max-width: 1200px; margin: auto;}
+
 
 .header {
 	border: 2px solid green; 
@@ -9,3 +27,34 @@
 .header .logo {border: 2px solid red; font-size: 3rem;}
 .header .navi-wrap {border: 2px solid blue; display: flex;}
 .header .navi-wrap .navi {border: 2px solid orange; padding: 0.5rem 1rem;}
+
+.prd-wrap {border: 2px solid green; margin-top: 100px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.prd-wrap .prd {border: 2px solid orange; width: 32%; margin-bottom: 2%;}
+
+@media screen and (max-width: 991px) {
+	.prd-wrap .prd {width: 49%;}
+}
+
+@media screen and (max-width: 767px) {
+	.prd-wrap {justify-content: center;}
+	.prd-wrap .prd {width: 96%;}
+}
+
+
+.box-wrap {margin-top: 100px; border: 5px solid green; height: 600px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: space-evenly;
+	flex-wrap: wrap;
+}
+.box-wrap .box {border: 5px solid orangered;
+	flex-basis: 20%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
