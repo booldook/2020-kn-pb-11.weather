@@ -1,0 +1,11 @@
+.wrapper {max-width: 1200px; margin: auto;}
+
+.header {
+	border: 2px solid green; 
+	display: flex; 
+	justify-content: space-between; 
+	align-items: center;
+}
+.header .logo {border: 2px solid red; font-size: 3rem;}
+.header .navi-wrap {border: 2px solid blue; display: flex;}
+.header .navi-wrap .navi {border: 2px solid orange; padding: 0.5rem 1rem;}
