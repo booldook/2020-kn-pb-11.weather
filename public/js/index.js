@@ -95,7 +95,7 @@ function onCityChange() {
 	data.units = API_UNIT;
 	data.exclude = 'hourly, current';
 	$.get(API_DAILY, data, onInfo);
-	$.get(API_DAILY, data, onWeekInfo);
+	$.get(API_WEEKLY, data, onWeekInfo);
 }
 
 function onWeekInfo(r) {

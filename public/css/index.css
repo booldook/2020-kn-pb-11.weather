@@ -29,14 +29,14 @@
 .world-wrap .title-mobile {display: none;}
 
 /******************* info-wrap ********************/
-.info-wrap {display: none; flex-direction: column; text-align: center;}
+.info-wrap {display: none; flex-direction: column; text-align: center; font-size: 1rem;}
 /* .info-wrap > div {border: 1px solid red;} */
-.info-header {padding: 1rem; background-color: #2e3b34; color: #fff; font-size: 1.25rem; 
+.info-header {padding: 1em; background-color: #2e3b34; color: #fff; font-size: 1.25em; 
 	text-align: left; cursor: pointer;}
-.info-title {padding: 1rem;  font-size: 3rem;}
-.info-daily {padding: 1rem; font-size: 1rem;}
+.info-title {padding: 1em;  font-size: 3em;}
+.info-daily {padding: 1em; font-size: 1em;}
 .info-daily .ml {margin-left: 1em;}
-.info-daily > .icon {width: 150px; margin: 1em auto;}
+.info-daily > .icon {width: 100px; margin: auto;}
 .info-daily > .temps {font-size: 1em;}
 .info-daily .main {font-size: 2em; margin-bottom: 1em;}
 .info-daily .title {color: #555;}
@@ -66,4 +66,9 @@
 	.world-wrap .title-mobile {display: block;}
 	.world-wrap .desc-mobile {display: flex; align-items: center;}
 	.world-wrap .desc {margin-left: 1rem;}
+	.info-wrap {font-size: 1.125rem;}
+	.info-title {font-size: 2.5em;}
+	.info-daily .main {font-size: 1.5em;}
+	.info-daily .temp {font-size: 2em;}
+	.info-weekly .week {flex: 98% 0 0;}
 }
