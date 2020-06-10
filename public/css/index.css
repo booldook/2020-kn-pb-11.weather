@@ -38,6 +38,7 @@
 .info-daily .ml {margin-left: 1em;}
 .info-daily > .icon {width: 150px; margin: 1em auto;}
 .info-daily > .temps {font-size: 1em;}
+.info-daily .main {font-size: 2em; margin-bottom: 1em;}
 .info-daily .title {color: #555;}
 .info-daily .desc {color: #1f3a1d;}
 .info-daily .unit {color: #bbb;}

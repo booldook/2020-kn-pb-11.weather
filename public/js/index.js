@@ -91,6 +91,14 @@ function onInfo(r) {
 	$(".home-wrap").css("display", "none");
 	$(".info-wrap").css("display", "flex");
 	$(".info-title").html(r.name + ', ' + r.sys.country);
+	$(".info-wrap").find(".main").html(r.weather[0].main + '[' + r.weather[0].description + ']');
+	$(".info-wrap .temp").find(".desc").html(r.main.temp);
+	$(".info-wrap .temp-detail").find(".desc").eq(0).html(r.main.temp_max);
+	$(".info-wrap .temp-detail").find(".desc").eq(1).html(r.main.temp_min);
+	$(".info-wrap .pressure").find(".desc").eq(0).html(r.main.pressure);
+	$(".info-wrap .pressure").find(".desc").eq(1).html(r.main.humidity);
+	$(".info-wrap .wind").find(".desc").html(r.wind.speed);
+	$(".info-wrap .wind").find(".fa-arrow-down").css("transform", "rotate("+r.wind.deg+"deg)");
 }
 
 function onBack() {
