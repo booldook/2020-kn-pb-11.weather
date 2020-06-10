@@ -74,7 +74,15 @@ function onDaily(r) {
 }
 
 function onDailyClick() {
-
+	navigator.geolocation.getCurrentPosition(onGetPosition);
+	function onGetPosition(p){
+		var data = {};
+		data.lat = p.coords.latitude;
+		data.lon = p.coords.longitude;
+		data.appid = API_KEY;
+		data.units = API_UNIT;
+		$.get(API_DAILY, data, onInfo);
+	}
 }
 
 function onCityChange() {
