@@ -5,7 +5,7 @@ var API_DAILY = "https://api.openweathermap.org/data/2.5/weather";
 var API_WEEKLY = "https://api.openweathermap.org/data/2.5/onecall";
 var API_KEY = "02efdd64bdc14b279bc91d9247db4722";
 var API_UNIT = "metric";
-var ICON_URL = 'http://openweathermap.org/img/wn/';
+var ICON_URL = 'https://openweathermap.org/img/wn/';
 var ICON_EXT = '@2x.png';
 
 var DAILY_DATA = { appid: API_KEY, units: API_UNIT }

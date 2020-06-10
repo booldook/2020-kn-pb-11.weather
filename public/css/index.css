@@ -1,7 +1,7 @@
 .wrapper {max-width: 768px; height: 100vh; margin: auto; overflow: hidden;}
 .wrap {width: 100%; height: 100%;}
 
-.home-wrap {display: flex; flex-direction: column;}
+.home-wrap {display: none; flex-direction: column;}
 
 .home-wrap .title-wrap {flex: 35% 1 0; display: flex; align-items: center; letter-spacing: -3px; padding-top: 80px;}
 .home-wrap .title-wrap .bar {border: 2px solid yellowgreen; width: 50%;}
@@ -28,8 +28,28 @@
 .world-wrap .title-pc {display: block;}
 .world-wrap .title-mobile {display: none;}
 
-.info-wrap {visibility: hidden;}
+/******************* info-wrap ********************/
+.info-wrap {display: flex; flex-direction: column; text-align: center;}
+.info-wrap > div {border: 1px solid red;}
+.info-header {padding: 1rem; background-color: #2e3b34; color: #fff; font-size: 1.25rem;}
+.info-title {padding: 1rem;  font-size: 3rem;}
+.info-daily {padding: 1rem; font-size: 1rem;}
+.info-daily .ml {margin-left: 1em;}
+.info-daily > .icon {width: 150px; margin: 1em auto;}
+.info-daily > .temps {font-size: 1em;}
+.info-daily .title {color: #555;}
+.info-daily .desc {color: #1f3a1d;}
+.info-daily .unit {color: #bbb;}
+.info-daily .temp {font-size: 2.5em;}
+.info-daily .temp-detail {font-size: 1.25em; padding: 0.5em;}
+.info-daily .pressure {font-size: 1.125em; padding: 0.5em;}
+.info-daily .wind {font-size: 1.125em; padding: 0.5em;}
 
+.info-weekly {flex-grow: 1;}
+
+
+
+/******************* 반응형 ********************/
 @media screen and (max-width: 480px) {
 	html, body {font-size: 0.75rem;}
 
