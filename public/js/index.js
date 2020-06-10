@@ -107,7 +107,7 @@ function onWeekInfo(r) {
 		html += '	<div class="icon"><img src="'+ICON_URL+r.daily[i].weather[0].icon+ICON_EXT+'"></div>';
 		html += '	<div class="desc">';
 		html += '		<div class="time">'+d.format('YYYY-MM-DD, ddd')+'</div>';
-		html += '		<div class="main"></div>';
+		html += '		<div class="main">'+r.daily[i].weather[0].main+' ['+r.daily[i].weather[0].description+']</div>';
 		html += '		<div class="temp">';
 		html += '			<span class="desc">33.5</span>';
 		html += '			<span class="unit">℃</span>';
@@ -129,14 +129,15 @@ function onInfo(r) {
 	$(".home-wrap").css("display", "none");
 	$(".info-wrap").css("display", "flex");
 	$(".info-title").html(r.name + ', ' + r.sys.country);
-	$(".info-wrap").find(".main").html(r.weather[0].main + '[' + r.weather[0].description + ']');
-	$(".info-wrap .temp").find(".desc").html(r.main.temp);
-	$(".info-wrap .temp-detail").find(".desc").eq(0).html(r.main.temp_max);
-	$(".info-wrap .temp-detail").find(".desc").eq(1).html(r.main.temp_min);
-	$(".info-wrap .pressure").find(".desc").eq(0).html(r.main.pressure);
-	$(".info-wrap .pressure").find(".desc").eq(1).html(r.main.humidity);
-	$(".info-wrap .wind").find(".desc").html(r.wind.speed);
-	$(".info-wrap .wind").find(".fa-arrow-down").css("transform", "rotate("+r.wind.deg+"deg)");
+	$(".info-daily .icon").find("img").attr('src', ICON_URL + r.weather[0].icon + ICON_EXT);
+	$(".info-daily").find(".main").html(r.weather[0].main + '[' + r.weather[0].description + ']');
+	$(".info-daily .temp").find(".desc").html(r.main.temp);
+	$(".info-daily .temp-detail").find(".desc").eq(0).html(r.main.temp_max);
+	$(".info-daily .temp-detail").find(".desc").eq(1).html(r.main.temp_min);
+	$(".info-daily .pressure").find(".desc").eq(0).html(r.main.pressure);
+	$(".info-daily .pressure").find(".desc").eq(1).html(r.main.humidity);
+	$(".info-daily .wind").find(".desc").html(r.wind.speed);
+	$(".info-daily .wind").find(".fa-arrow-down").css("transform", "rotate("+r.wind.deg+"deg)");
 }
 
 function onBack() {
