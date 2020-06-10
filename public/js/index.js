@@ -81,7 +81,9 @@ function onDailyClick() {
 		data.lon = p.coords.longitude;
 		data.appid = API_KEY;
 		data.units = API_UNIT;
+		data.exclude = 'hourly, current';
 		$.get(API_DAILY, data, onInfo);
+		$.get(API_WEEKLY, data, onWeekInfo);
 	}
 }
 
@@ -91,7 +93,13 @@ function onCityChange() {
 	data.id = $(this).val();
 	data.appid = API_KEY;
 	data.units = API_UNIT;
+	data.exclude = 'hourly, current';
 	$.get(API_DAILY, data, onInfo);
+	$.get(API_DAILY, data, onWeekInfo);
+}
+
+function onWeekInfo(r) {
+	console.log(r);
 }
 
 function onInfo(r) {
