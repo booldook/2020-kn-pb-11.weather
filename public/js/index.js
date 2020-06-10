@@ -81,9 +81,7 @@ function onDailyClick() {
 		data.lon = p.coords.longitude;
 		data.appid = API_KEY;
 		data.units = API_UNIT;
-		data.exclude = 'hourly, current';
 		$.get(API_DAILY, data, onInfo);
-		$.get(API_WEEKLY, data, onWeekInfo);
 	}
 }
 
@@ -93,9 +91,7 @@ function onCityChange() {
 	data.id = $(this).val();
 	data.appid = API_KEY;
 	data.units = API_UNIT;
-	data.exclude = 'hourly, current';
 	$.get(API_DAILY, data, onInfo);
-	$.get(API_WEEKLY, data, onWeekInfo);
 }
 
 function onWeekInfo(r) {
@@ -109,13 +105,13 @@ function onWeekInfo(r) {
 		html += '		<div class="time">'+d.format('YYYY-MM-DD, ddd')+'</div>';
 		html += '		<div class="main">'+r.daily[i].weather[0].main+' ['+r.daily[i].weather[0].description+']</div>';
 		html += '		<div class="temp">';
-		html += '			<span class="desc">33.5</span>';
+		html += '			<span class="desc">'+r.daily[i].temp.day+'</span>';
 		html += '			<span class="unit">℃</span>';
 		html += '			<span class="title">최고온도: </span>';
-		html += '			<span class="desc">35.5</span>';
+		html += '			<span class="desc">'+r.daily[i].temp.max+'</span>';
 		html += '			<span class="unit">℃</span>';
 		html += '			<span class="title ml">최저온도: </span>';
-		html += '			<span class="desc">31.5</span>';
+		html += '			<span class="desc">'+r.daily[i].temp.min+'</span>';
 		html += '			<span class="unit">℃</span>';
 		html += '		</div>';
 		html += '	</div>';
@@ -126,6 +122,12 @@ function onWeekInfo(r) {
 
 function onInfo(r) {
 	console.log(r);
+	var data = {};
+	data.appid = API_KEY;
+	data.units = API_UNIT;
+	data.lat = r.coord.lat;
+	data.lon = r.coord.lon;
+	$.get(API_WEEKLY, data, onWeekInfo);
 	$(".home-wrap").css("display", "none");
 	$(".info-wrap").css("display", "flex");
 	$(".info-title").html(r.name + ', ' + r.sys.country);

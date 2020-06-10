@@ -32,7 +32,7 @@
 .info-wrap {display: none; flex-direction: column; text-align: center; font-size: 1rem;}
 /* .info-wrap > div {border: 1px solid red;} */
 .info-header {padding: 1em; background-color: #2e3b34; color: #fff; font-size: 1.25em; 
-	text-align: left; cursor: pointer; width: 100%; position: fixed;}
+	text-align: left; cursor: pointer; width: 100%; position: fixed; left: 0; top: 0;}
 .info-title {padding-top: 2em;  font-size: 3em;}
 .info-daily {padding: 1em; font-size: 1em;}
 .info-daily .ml {margin-left: 1em;}
