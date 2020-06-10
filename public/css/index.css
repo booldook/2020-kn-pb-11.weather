@@ -1,4 +1,4 @@
-.wrapper {max-width: 768px; height: 100vh; margin: auto; overflow: hidden;}
+.wrapper {max-width: 768px; height: 100vh; margin: auto;}
 .wrap {width: 100%; height: 100%;}
 
 .home-wrap {display: flex; flex-direction: column;}
@@ -32,8 +32,8 @@
 .info-wrap {display: none; flex-direction: column; text-align: center; font-size: 1rem;}
 /* .info-wrap > div {border: 1px solid red;} */
 .info-header {padding: 1em; background-color: #2e3b34; color: #fff; font-size: 1.25em; 
-	text-align: left; cursor: pointer;}
-.info-title {padding: 1em;  font-size: 3em;}
+	text-align: left; cursor: pointer; width: 100%; position: fixed;}
+.info-title {padding-top: 2em;  font-size: 3em;}
 .info-daily {padding: 1em; font-size: 1em;}
 .info-daily .ml {margin-left: 1em;}
 .info-daily > .icon {width: 100px; margin: auto;}
@@ -47,7 +47,7 @@
 .info-daily .pressure {font-size: 1.125em; padding: 0.5em;}
 .info-daily .wind {font-size: 1.125em; padding: 0.5em;}
 
-.info-weekly {flex-grow: 1; display: flex; flex-wrap: wrap; justify-content: space-evenly; background-color: #becc91; overflow-y: scroll; text-align: left;}
+.info-weekly {flex-grow: 1; display: flex; flex-wrap: wrap; justify-content: space-evenly; background-color: #becc91; /* overflow-y: scroll; */ text-align: left;}
 .info-weekly .week {flex: 48% 0 0; display: flex; align-items: center; background-color: #2e3b34; color: #fff; margin: 0.5% 0;}
 
 
