@@ -100,6 +100,27 @@ function onCityChange() {
 
 function onWeekInfo(r) {
 	console.log(r);
+	var html;
+	for(var i in r.daily) {
+		html  = '<div class="week">';
+		html += '	<div class="icon"><img></div>';
+		html += '	<div class="desc">';
+		html += '		<div class="time"></div>';
+		html += '		<div class="main"></div>';
+		html += '		<div class="temp">';
+		html += '			<span class="desc">33.5</span>';
+		html += '			<span class="unit">℃</span>';
+		html += '			<span class="title">최고온도: </span>';
+		html += '			<span class="desc">35.5</span>';
+		html += '			<span class="unit">℃</span>';
+		html += '			<span class="title ml">최저온도: </span>';
+		html += '			<span class="desc">31.5</span>';
+		html += '			<span class="unit">℃</span>';
+		html += '		</div>';
+		html += '	</div>';
+		html += '</div>';
+		$(".info-weekly").append(html);
+	}
 }
 
 function onInfo(r) {
