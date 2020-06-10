@@ -24,7 +24,7 @@ function onCity(r) {
 		$("#city").append(html);
 	}
 }
-
+// https://api.openweathermap.org/data/2.5/weather
 function onWorld(r) {
 	r.cities.forEach(function(v, i){
 		var data = {};
@@ -73,11 +73,41 @@ function onDaily(r) {
 	$(".daily-desc2").html(r.weather[0].description);
 }
 
+function onDailyClick() {
+
+}
+
+function onCityChange() {
+	// var data = { id: $(this).val(), appid: API_KEY, units: API_UNIT };
+	var data = {};
+	data.id = $(this).val();
+	data.appid = API_KEY;
+	data.units = API_UNIT;
+	$.get(API_DAILY, data, onInfo);
+}
+
+function onInfo(r) {
+	console.log(r);
+	$(".home-wrap").css("display", "none");
+	$(".info-wrap").css("display", "flex");
+	$(".info-title").html(r.name + ', ' + r.sys.country);
+}
+
+function onBack() {
+	$(".home-wrap").css("display", "flex");
+	$(".info-wrap").css("display", "none");
+}
 
 /**************** 이벤트 설정 ****************/
 $.get(API_CITY, onCity);
 $.get(API_WORLD, onWorld);
 navigator.geolocation.getCurrentPosition(onPosition);
+
+$(".daily-wrap").click(onDailyClick);
+$("#city").change(onCityChange);
+$(".bt-back").click(onBack);
+
+
 
 /*
 if(isMobile()) {

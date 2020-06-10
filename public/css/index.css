@@ -1,7 +1,7 @@
 .wrapper {max-width: 768px; height: 100vh; margin: auto; overflow: hidden;}
 .wrap {width: 100%; height: 100%;}
 
-.home-wrap {display: none; flex-direction: column;}
+.home-wrap {display: flex; flex-direction: column;}
 
 .home-wrap .title-wrap {flex: 35% 1 0; display: flex; align-items: center; letter-spacing: -3px; padding-top: 80px;}
 .home-wrap .title-wrap .bar {border: 2px solid yellowgreen; width: 50%;}
@@ -29,9 +29,10 @@
 .world-wrap .title-mobile {display: none;}
 
 /******************* info-wrap ********************/
-.info-wrap {display: flex; flex-direction: column; text-align: center;}
-.info-wrap > div {border: 1px solid red;}
-.info-header {padding: 1rem; background-color: #2e3b34; color: #fff; font-size: 1.25rem;}
+.info-wrap {display: none; flex-direction: column; text-align: center;}
+/* .info-wrap > div {border: 1px solid red;} */
+.info-header {padding: 1rem; background-color: #2e3b34; color: #fff; font-size: 1.25rem; 
+	text-align: left; cursor: pointer;}
 .info-title {padding: 1rem;  font-size: 3rem;}
 .info-daily {padding: 1rem; font-size: 1rem;}
 .info-daily .ml {margin-left: 1em;}
