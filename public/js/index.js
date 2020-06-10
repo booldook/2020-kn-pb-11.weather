@@ -11,7 +11,9 @@ var ICON_EXT = '@2x.png';
 var DAILY_DATA = { appid: API_KEY, units: API_UNIT }
 
 /**************** 사용자 함수 ****************/
-
+function isMobile() {
+	return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+};
 
 
 /**************** 이벤트 콜백 ****************/
@@ -35,19 +37,24 @@ function onWorld(r) {
 
 function onWorldWeather(r) {
 	console.log(r);
-	var html = '<div class="city">';
-	html += '<div class="title">'+r.name+', '+r.sys.country+'</div>';
-	html += '<div class="icon">';
-	html += '<img src="'+ICON_URL+r.weather[0].icon+ICON_EXT+'">';
-	html += '</div>';
-	html += '<div class="temp">';
-	html += '<span>'+r.main.temp+'</span> ℃';
-	html += '</div>';
-	html += '<div class="desc">';
-	html += '<span>'+r.weather[0].main+'</span> / ';
-	html += '<span>'+r.weather[0].description+'</span>';
-	html += '</div>';
-	html += '</div>';
+	var html  = '<div class="city">';
+			html += '	<div class="title title-pc">'+r.name+', '+r.sys.country+'</div>';
+			html += '	<div class="icon">';
+			html += '		<img src="'+ICON_URL+r.weather[0].icon+ICON_EXT+'">';
+			html += '	</div>';
+			html += '	<div class="desc-wrap">';
+			html += '		<div class="title title-mobile">'+r.name+', '+r.sys.country+'</div>';
+			html += '		<div class="desc-mobile">';
+			html += '			<div class="temp">';
+			html += '				<span>'+r.main.temp+'</span> ℃';
+			html += '			</div>';
+			html += '			<div class="desc">';
+			html += '				<span>'+r.weather[0].main+'</span> / ';
+			html += '				<span>'+r.weather[0].description+'</span>';
+			html += '			</div>';
+			html += '		</div>';
+			html += '	</div>';
+			html += '</div>';
 	$(".world-wrap").append(html);
 }
 
@@ -71,3 +78,14 @@ function onDaily(r) {
 $.get(API_CITY, onCity);
 $.get(API_WORLD, onWorld);
 navigator.geolocation.getCurrentPosition(onPosition);
+
+/*
+if(isMobile()) {
+	$("head").append('<meta name="viewport" content="width=device-width, initial-scale=0.8">');
+}
+else {
+	$("head").append('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+}
+*/
+
+
