@@ -100,12 +100,13 @@ function onCityChange() {
 
 function onWeekInfo(r) {
 	console.log(r);
-	var html;
+	var html = '', d;
 	for(var i in r.daily) {
-		html  = '<div class="week">';
-		html += '	<div class="icon"><img></div>';
+		d = moment(r.daily[i].dt*1000);
+		html += '<div class="week">';
+		html += '	<div class="icon"><img src="'+ICON_URL+r.daily[i].weather[0].icon+ICON_EXT+'"></div>';
 		html += '	<div class="desc">';
-		html += '		<div class="time"></div>';
+		html += '		<div class="time">'+d.format('YYYY-MM-DD, ddd')+'</div>';
 		html += '		<div class="main"></div>';
 		html += '		<div class="temp">';
 		html += '			<span class="desc">33.5</span>';
@@ -119,8 +120,8 @@ function onWeekInfo(r) {
 		html += '		</div>';
 		html += '	</div>';
 		html += '</div>';
-		$(".info-weekly").append(html);
 	}
+	$(".info-weekly").html(html);
 }
 
 function onInfo(r) {

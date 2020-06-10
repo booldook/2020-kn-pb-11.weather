@@ -47,7 +47,7 @@
 .info-daily .pressure {font-size: 1.125em; padding: 0.5em;}
 .info-daily .wind {font-size: 1.125em; padding: 0.5em;}
 
-.info-weekly {flex-grow: 1; display: flex; flex-wrap: wrap; justify-content: space-evenly; background-color: #becc91;}
+.info-weekly {flex-grow: 1; display: flex; flex-wrap: wrap; justify-content: space-evenly; background-color: #becc91; overflow-y: scroll;}
 .info-weekly .week {flex: 48% 0 0; display: flex; background-color: #2e3b34; color: #fff; margin: 0.5% 0;}
 
 
